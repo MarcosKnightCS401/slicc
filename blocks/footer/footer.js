@@ -38,6 +38,19 @@ export default async function decorate(block) {
   const primary = document.createElement('div');
   primary.className = 'footer-primary';
 
+  // Logo column
+  const logoCol = document.createElement('div');
+  logoCol.className = 'footer-logo';
+  const logoLink = document.createElement('a');
+  logoLink.href = '/';
+  logoLink.setAttribute('aria-label', 'Zimmer Biomet');
+  const logoImg = document.createElement('img');
+  logoImg.src = '/icons/logo.svg';
+  logoImg.alt = 'Zimmer Biomet';
+  logoImg.className = 'footer-logo-img';
+  logoLink.append(logoImg);
+  logoCol.append(logoLink);
+
   // Row 1: nav links + social links
   const row1 = document.createElement('div');
   row1.className = 'footer-row-main';
@@ -52,15 +65,12 @@ export default async function decorate(block) {
 
   row1.append(navCol, socialCol);
 
-  // Divider
-  const hr = document.createElement('hr');
-
   // Row 2: legal links
   const row2 = document.createElement('div');
   row2.className = 'footer-legal-links';
   legalLinks.forEach((p) => row2.append(p));
 
-  primary.append(row1, hr, row2);
+  primary.append(logoCol, row1, row2);
 
   // Info section
   const info = document.createElement('div');
