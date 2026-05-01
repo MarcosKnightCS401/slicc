@@ -11,12 +11,13 @@
 
 /* ── Row 1: Utility bar ── */
 .header.block .nav-utility {
-  background: rgb(28, 17, 55);
+  background: #fff;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .header.block .nav-utility ul {
@@ -33,7 +34,7 @@
 
 .header.block .nav-utility a {
   display: block;
-  color: #fff;
+  color: rgb(28, 17, 55);
   text-decoration: none;
   font-size: 12px;
   font-weight: 400;
@@ -64,7 +65,7 @@
 }
 
 .header.block .nav-utility ul:last-child li:not(:last-child) {
-  border-right: 1px solid rgba(255,255,255,0.25);
+  border-right: 1px solid rgba(28,17,55,0.2);
 }
 
 /* ── Row 2: Main nav ── */
@@ -243,7 +244,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: rgb(28, 17, 55);
+  background: #fff;
   position: relative;
 }
 
@@ -253,7 +254,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: rgb(28, 17, 55);
+  background: #fff;
   position: absolute;
 }
 
