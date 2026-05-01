@@ -48,10 +48,19 @@
   text-decoration: underline;
 }
 
-/* Right group (Find a Doctor, Find a Rep, US EN) — slightly highlighted */
+/* Right group (Find a Doctor, Find a Rep, US EN) */
 .header.block .nav-utility ul:last-child a {
   font-weight: 500;
   opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none !important;
+}
+
+.header.block .nav-utility ul:last-child a svg {
+  flex-shrink: 0;
+  opacity: 0.9;
 }
 
 .header.block .nav-utility ul:last-child li:not(:last-child) {
