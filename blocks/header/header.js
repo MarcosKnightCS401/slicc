@@ -1,14 +1,26 @@
+import { getMetadata } from '../../scripts/aem.js';
+
 export default async function decorate(block) {
+  // Fetch nav fragment
+  const navMeta = getMetadata('nav');
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+
+  const resp = await fetch(`${navPath}.plain.html`);
+  if (!resp.ok) return;
+
+  const html = await resp.text();
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  block.innerHTML = '';
+  block.append(...tmp.children);
+
   const nav = document.createElement('nav');
   nav.id = 'nav';
 
   const children = [...block.children];
-  // Expected structure: [brand-div, sections-div, tools-div]
   const classes = ['brand', 'sections', 'tools'];
   children.forEach((child, i) => {
-    if (i < classes.length) {
-      child.classList.add(`nav-${classes[i]}`);
-    }
+    if (i < classes.length) child.classList.add(`nav-${classes[i]}`);
     nav.append(child);
   });
 
@@ -47,23 +59,23 @@ export default async function decorate(block) {
           });
         }
         item.addEventListener('mouseleave', () => {
-          if (window.innerWidth >= 900) {
-            item.classList.remove('nav-drop-open');
-          }
+          if (window.innerWidth >= 900) item.classList.remove('nav-drop-open');
         });
       }
     });
   }
 
-  // Set desktop expanded
   const mql = window.matchMedia('(min-width: 900px)');
   function handleMedia(e) {
-    nav.setAttribute('aria-expanded', e.matches);
-    if (e.matches) document.body.style.overflow = '';
+    nav.setAttribute('aria-expanded', e.matches ? 'true' : 'false');
   }
   mql.addEventListener('change', handleMedia);
   handleMedia(mql);
 
   block.innerHTML = '';
   block.append(nav);
+  block.classList.add('nav-wrapper');
+
+  // Add nav padding to main
+  document.querySelector('main').style.marginTop = 'var(--nav-height, 125px)';
 }
