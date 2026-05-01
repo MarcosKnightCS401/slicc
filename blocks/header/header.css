@@ -1,4 +1,4 @@
-/* Header Block — Zimmer Biomet */
+/* ── Header block ── */
 .header.block {
   position: fixed;
   top: 0;
@@ -6,38 +6,35 @@
   right: 0;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ── Utility bar (nav-tools) ── */
-.header.block .nav-tools {
+/* ── Row 1: Utility bar ── */
+.header.block .nav-utility {
   background: rgb(28, 17, 55);
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 48px;
-  gap: 0;
 }
 
-.header.block .nav-tools ul {
+.header.block .nav-utility ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0;
 }
 
-.header.block .nav-tools li {
+.header.block .nav-utility li {
   border-right: 1px solid rgba(255,255,255,0.2);
 }
 
-.header.block .nav-tools li:first-child {
+.header.block .nav-utility li:first-child {
   border-left: 1px solid rgba(255,255,255,0.2);
 }
 
-.header.block .nav-tools a {
+.header.block .nav-utility a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -48,29 +45,24 @@
   white-space: nowrap;
 }
 
-.header.block .nav-tools a:hover {
+.header.block .nav-utility a:hover {
   background: rgba(255,255,255,0.1);
 }
 
-/* Search form in tools — hidden in utility bar, shown separately */
-.header.block .nav-tools .nav-search {
-  display: none;
-}
-
-/* ── Main nav row (brand + sections + search) ── */
+/* ── Row 2: Main nav ── */
 .header.block nav {
+  background: #fff;
   display: flex;
   align-items: center;
   height: 85px;
   padding: 0 48px;
-  gap: 32px;
+  gap: 0;
 }
 
-/* ── Brand / Logo ── */
+/* ── Logo ── */
 .header.block .nav-brand {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
+  margin-right: 32px;
 }
 
 .header.block .nav-brand a {
@@ -82,65 +74,125 @@
 .header.block .nav-brand img {
   height: 32px;
   width: auto;
-  display: block;
 }
 
 /* ── Nav sections ── */
 .header.block .nav-sections {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  height: 100%;
+  min-width: 0;
 }
 
-.header.block .nav-sections ul {
+.header.block .nav-sections > ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0;
+  height: 100%;
+  align-items: stretch;
+}
+
+.header.block .nav-sections > ul > li {
+  display: flex;
+  align-items: center;
 }
 
 .header.block .nav-sections > ul > li > a {
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
   color: rgb(28, 17, 55);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  padding: 0 18px;
-  line-height: 85px;
   white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
 }
 
 .header.block .nav-sections > ul > li > a:hover,
 .header.block .nav-sections > ul > li.nav-drop-open > a {
   color: #2178CA;
+  border-bottom-color: #2178CA;
 }
 
-/* ── Search box (right side of nav row) ── */
+/* ── Dropdowns ── */
+.header.block .nav-sections > ul > li.nav-drop {
+  position: relative;
+}
+
+.header.block .nav-sections > ul > li.nav-drop > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 240px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  padding: 8px 0;
+  z-index: 200;
+  flex-direction: column;
+}
+
+.header.block .nav-sections > ul > li.nav-drop-open > ul {
+  display: flex;
+}
+
+.header.block .nav-sections > ul > li.nav-drop > ul li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(28, 17, 55);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header.block .nav-sections > ul > li.nav-drop > ul li a:hover {
+  background: #f0f4f8;
+  color: #2178CA;
+}
+
+.header.block .nav-sections > ul > li.nav-drop > ul li h3 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #999;
+  padding: 12px 20px 4px;
+  margin: 0;
+  letter-spacing: 0.06em;
+}
+
+/* ── Search box ── */
 .header.block .nav-search {
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  margin-left: 24px;
   border: 1px solid #ccc;
   border-radius: 2px;
-  overflow: hidden;
   height: 36px;
+  overflow: hidden;
 }
 
-.header.block .nav-search input {
+.header.block .nav-search input[type=search] {
   border: none;
   outline: none;
   font-size: 13px;
-  padding: 0 12px;
-  width: 220px;
+  padding: 0 10px;
+  width: 200px;
   height: 100%;
   font-family: 'Inter', sans-serif;
   color: rgb(28, 17, 55);
+  background: #fff;
+  -webkit-appearance: none;
 }
 
-.header.block .nav-search input::placeholder {
-  color: #888;
-  font-size: 13px;
+.header.block .nav-search input[type=search]::placeholder {
+  color: #999;
 }
 
 .header.block .nav-search button {
@@ -159,58 +211,6 @@
   background: #f5f5f5;
 }
 
-/* ── Dropdowns ── */
-.header.block .nav-sections > ul > li.nav-drop {
-  position: relative;
-}
-
-.header.block .nav-sections > ul > li.nav-drop > ul {
-  display: none;
-  position: absolute;
-  top: 85px;
-  left: 0;
-  background: #fff;
-  min-width: 220px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  padding: 12px 0;
-  z-index: 100;
-  flex-direction: column;
-}
-
-.header.block .nav-sections > ul > li.nav-drop-open > ul {
-  display: flex;
-}
-
-.header.block .nav-sections > ul > li.nav-drop > ul li {
-  padding: 0;
-}
-
-.header.block .nav-sections > ul > li.nav-drop > ul li a {
-  display: block;
-  padding: 8px 20px;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgb(28, 17, 55);
-  text-decoration: none;
-  line-height: 1.4;
-  white-space: nowrap;
-}
-
-.header.block .nav-sections > ul > li.nav-drop > ul li a:hover {
-  background: #f5f7fa;
-  color: #2178CA;
-}
-
-.header.block .nav-sections > ul > li.nav-drop > ul li h3 {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #888;
-  padding: 12px 20px 4px;
-  margin: 0;
-  letter-spacing: 0.05em;
-}
-
 /* ── Hamburger (mobile only) ── */
 .header.block .nav-hamburger {
   display: none;
@@ -221,35 +221,43 @@
   margin-left: auto;
 }
 
-.header.block .nav-hamburger-icon,
-.header.block .nav-hamburger-icon::before,
-.header.block .nav-hamburger-icon::after {
+.header.block .nav-hamburger-icon {
   display: block;
   width: 22px;
   height: 2px;
   background: rgb(28, 17, 55);
   position: relative;
-  transition: transform 0.2s;
 }
 
 .header.block .nav-hamburger-icon::before,
 .header.block .nav-hamburger-icon::after {
   content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgb(28, 17, 55);
   position: absolute;
 }
 
-.header.block .nav-hamburger-icon::before { top: -6px; }
-.header.block .nav-hamburger-icon::after  { top: 6px; }
+.header.block .nav-hamburger-icon::before { top: -7px; }
+.header.block .nav-hamburger-icon::after  { top: 7px; }
+
+/* ── Push main content below fixed header (40px utility + 85px nav) ── */
+main {
+  margin-top: 125px !important;
+}
 
 /* ── Mobile ── */
 @media (max-width: 900px) {
+  .header.block .nav-utility { padding: 0 20px; }
+
   .header.block nav {
     flex-wrap: wrap;
     height: auto;
-    padding: 0 20px;
+    padding: 12px 20px;
   }
 
-  .header.block .nav-hamburger { display: block; }
+  .header.block .nav-hamburger { display: flex; align-items: center; }
 
   .header.block .nav-sections,
   .header.block .nav-search {
@@ -260,43 +268,30 @@
   .header.block nav[aria-expanded='true'] .nav-sections,
   .header.block nav[aria-expanded='true'] .nav-search {
     display: flex;
+  }
+
+  .header.block nav[aria-expanded='true'] .nav-sections {
     flex-direction: column;
+    height: auto;
   }
 
   .header.block .nav-sections > ul {
     flex-direction: column;
-    width: 100%;
+    height: auto;
   }
 
   .header.block .nav-sections > ul > li > a {
-    line-height: 1;
-    padding: 14px 0;
+    height: auto;
+    padding: 12px 0;
     border-bottom: 1px solid #eee;
+    border-left: none;
   }
 
-  .header.block .nav-tools {
-    padding: 0 20px;
-    justify-content: flex-start;
-    overflow-x: auto;
+  .header.block .nav-search {
+    margin: 12px 0 0;
   }
-}
 
-/* Push main content below fixed header */
-main { margin-top: 125px; }
-
-/* Override: constrain nav to viewport width */
-.header.block nav {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* Sections should flex-shrink to make room for search */
-.header.block .nav-sections {
-  min-width: 0;
-  overflow: hidden;
-}
-
-.header.block .nav-sections ul {
-  flex-wrap: nowrap;
-  overflow: hidden;
+  .header.block .nav-search input[type=search] {
+    width: 100%;
+  }
 }
