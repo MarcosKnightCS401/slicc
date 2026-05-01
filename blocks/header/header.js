@@ -95,20 +95,19 @@ export default async function decorate(block) {
   mql.addEventListener('change', handleMedia);
   handleMedia(mql);
 
-  // Move search form from nav-tools into nav row (after sections)
-  const toolsSearch = nav.querySelector('.nav-tools .nav-search');
-  if (toolsSearch) {
-    toolsSearch.remove();
-    nav.append(toolsSearch);
-  } else {
-    // Build search from the form in tools if present
-    const toolsForm = nav.querySelector('.nav-tools form');
-    if (toolsForm) {
-      toolsForm.classList.add('nav-search');
-      toolsForm.remove();
-      nav.append(toolsForm);
-    }
-  }
+  // Inject search box into nav row
+  const searchForm = document.createElement('form');
+  searchForm.className = 'nav-search';
+  searchForm.setAttribute('action', '/en/search-results.html');
+  searchForm.setAttribute('method', 'get');
+  searchForm.innerHTML = `
+    <input type="search" name="q" placeholder="What can we help you find?" aria-label="Search">
+    <button type="submit" aria-label="Submit search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>`;
+  nav.append(searchForm);
 
   block.innerHTML = '';
   block.append(nav);
