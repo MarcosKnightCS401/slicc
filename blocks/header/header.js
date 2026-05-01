@@ -17,7 +17,28 @@ export default async function decorate(block) {
   // ── Utility bar (top row) ──
   const utilityBar = document.createElement('div');
   utilityBar.className = 'nav-utility';
-  if (toolsDiv) utilityBar.append(toolsDiv);
+  if (toolsDiv) {
+    // Preserve both ul.nav-utility-left and ul.nav-utility-right
+    // DA may strip class attributes — reassign by order
+    const uls = toolsDiv.querySelectorAll('ul');
+    if (uls.length >= 2) {
+      uls[0].className = 'nav-utility-left';
+      uls[1].className = 'nav-utility-right';
+      utilityBar.append(uls[0], uls[1]);
+    } else if (uls.length === 1) {
+      // Single list — split on "Find a Doctor" as divider
+      const allItems = [...uls[0].querySelectorAll('li')];
+      const splitIdx = allItems.findIndex((li) => li.textContent.includes('Find a Doctor'));
+      const leftUl = document.createElement('ul');
+      const rightUl = document.createElement('ul');
+      leftUl.className = 'nav-utility-left';
+      rightUl.className = 'nav-utility-right';
+      allItems.forEach((li, i) => (i < splitIdx ? leftUl : rightUl).append(li));
+      utilityBar.append(leftUl, rightUl);
+    } else {
+      utilityBar.append(toolsDiv);
+    }
+  }
 
   // ── Main nav row (bottom row) ──
   const nav = document.createElement('nav');

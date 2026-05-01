@@ -15,7 +15,7 @@
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 48px;
 }
 
@@ -24,14 +24,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .header.block .nav-utility li {
-  border-right: 1px solid rgba(255,255,255,0.2);
-}
-
-.header.block .nav-utility li:first-child {
-  border-left: 1px solid rgba(255,255,255,0.2);
+  border: none;
 }
 
 .header.block .nav-utility a {
@@ -40,13 +37,25 @@
   text-decoration: none;
   font-size: 12px;
   font-weight: 400;
-  padding: 0 14px;
+  padding: 0 12px;
   line-height: 40px;
   white-space: nowrap;
+  opacity: 0.9;
 }
 
 .header.block .nav-utility a:hover {
-  background: rgba(255,255,255,0.1);
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Right group (Find a Doctor, Find a Rep, US EN) — slightly highlighted */
+.header.block .nav-utility ul:last-child a {
+  font-weight: 500;
+  opacity: 1;
+}
+
+.header.block .nav-utility ul:last-child li:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.25);
 }
 
 /* ── Row 2: Main nav ── */
