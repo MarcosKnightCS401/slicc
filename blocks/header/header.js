@@ -1,7 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
-  // Fetch nav fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
 
@@ -22,6 +21,30 @@ export default async function decorate(block) {
   children.forEach((child, i) => {
     if (i < classes.length) child.classList.add(`nav-${classes[i]}`);
     nav.append(child);
+  });
+
+  // Fix logo img src — resolve relative media_ URLs to absolute nav path
+  const logoImg = nav.querySelector('.nav-brand img');
+  if (logoImg) {
+    ['src', ...logoImg.getAttributeNames().filter((a) => a.startsWith('srcset'))]
+      .forEach((attr) => {
+        const val = logoImg.getAttribute(attr);
+        if (val && val.startsWith('./media_')) {
+          logoImg.setAttribute(attr, val.replace('./', `${navPath.replace('/nav', '')}/`));
+        }
+      });
+    [...nav.querySelectorAll('.nav-brand source')].forEach((s) => {
+      const val = s.getAttribute('srcset');
+      if (val && val.startsWith('./media_')) {
+        s.setAttribute('srcset', val.replace('./', `${navPath.replace('/nav', '')}/`));
+      }
+    });
+  }
+
+  // Unwrap <p><a> in nav sections so dropdowns work correctly
+  nav.querySelectorAll('.nav-sections li > p > a').forEach((a) => {
+    const p = a.parentElement;
+    p.replaceWith(a);
   });
 
   // Hamburger button
@@ -76,6 +99,5 @@ export default async function decorate(block) {
   block.append(nav);
   block.classList.add('nav-wrapper');
 
-  // Add nav padding to main
   document.querySelector('main').style.marginTop = 'var(--nav-height, 125px)';
 }
