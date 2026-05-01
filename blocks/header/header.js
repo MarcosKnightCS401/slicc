@@ -95,9 +95,22 @@ export default async function decorate(block) {
   mql.addEventListener('change', handleMedia);
   handleMedia(mql);
 
+  // Move search form from nav-tools into nav row (after sections)
+  const toolsSearch = nav.querySelector('.nav-tools .nav-search');
+  if (toolsSearch) {
+    toolsSearch.remove();
+    nav.append(toolsSearch);
+  } else {
+    // Build search from the form in tools if present
+    const toolsForm = nav.querySelector('.nav-tools form');
+    if (toolsForm) {
+      toolsForm.classList.add('nav-search');
+      toolsForm.remove();
+      nav.append(toolsForm);
+    }
+  }
+
   block.innerHTML = '';
   block.append(nav);
   block.classList.add('nav-wrapper');
-
-  document.querySelector('main').style.marginTop = 'var(--nav-height, 125px)';
 }
