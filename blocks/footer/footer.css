@@ -1,0 +1,140 @@
+footer {
+  --footer-primary-bg: rgb(28, 17, 55);
+  --footer-primary-text: #ffffff;
+  --footer-info-bg: rgb(242, 244, 247);
+  --footer-info-text: rgb(28, 17, 55);
+  --footer-divider-color: rgb(73, 65, 95);
+  --footer-font-size: 12.5px;
+  --footer-padding: 56px 48px;
+}
+
+/* Primary section — first direct child of footer */
+footer > div:first-child {
+  background: var(--footer-primary-bg);
+  color: var(--footer-primary-text);
+  padding: var(--footer-padding);
+  font-size: var(--footer-font-size);
+}
+
+footer > div:first-child a {
+  color: var(--footer-primary-text);
+  text-decoration: none;
+  font-size: var(--footer-font-size);
+}
+
+footer > div:first-child a:hover {
+  text-decoration: underline;
+}
+
+/* Row 1: nav links + social links */
+footer > div:first-child > div > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--footer-divider-color);
+  margin-bottom: 36px;
+}
+
+/* Nav links container */
+footer > div:first-child > div > div:first-child > div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+footer > div:first-child > div > div:first-child > div:first-child p {
+  margin: 0;
+}
+
+/* Social links container */
+footer > div:first-child > div > div:first-child > div:last-child {
+  display: flex;
+  gap: 16px;
+}
+
+footer > div:first-child > div > div:first-child > div:last-child p {
+  margin: 0;
+}
+
+/* Row 2: utility/legal links */
+footer > div:first-child > div > div:last-child > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: center;
+}
+
+footer > div:first-child > div > div:last-child > div p {
+  margin: 0;
+}
+
+footer > div:first-child > div > div:last-child > div p::after {
+  content: "\00b7";
+  margin-left: 8px;
+  color: var(--footer-primary-text);
+}
+
+footer > div:first-child > div > div:last-child > div p:last-child::after {
+  content: none;
+}
+
+/* Info section — second direct child of footer */
+footer > div:last-child {
+  background: var(--footer-info-bg);
+  color: var(--footer-info-text);
+  padding: 20px 48px;
+  font-size: var(--footer-font-size);
+}
+
+footer > div:last-child > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > div:last-child > div > div > div p {
+  margin: 0;
+}
+
+footer > div:last-child > div > div > div:last-child {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+footer > div:last-child a {
+  color: var(--footer-info-text);
+  text-decoration: none;
+}
+
+/* Button container resets for footer */
+footer .button-container {
+  display: inline;
+}
+
+footer a.button:any-link {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  footer > div:first-child > div > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  footer > div:last-child > div > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

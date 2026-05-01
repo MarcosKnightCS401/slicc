@@ -1,0 +1,87 @@
+{
+  "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement.html",
+  "fragments": [
+    {
+      "path": "/nav",
+      "children": [
+        {
+          "type": "block",
+          "name": "nav-bar",
+          "id": "rc1c1",
+          "bounds": { "x": 0, "y": 0, "width": 1142, "height": 131 }
+        }
+      ]
+    },
+    {
+      "path": "/en/products-and-solutions/specialties/cement",
+      "children": [
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "hero",
+              "id": "rc1c2c1",
+              "bounds": { "x": 0, "y": 131, "width": 1142, "height": 448 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "style": "highlight",
+          "children": [
+            {
+              "type": "block",
+              "name": "specialty-banner",
+              "id": "rc1c2c2",
+              "bounds": { "x": 0, "y": 642, "width": 1142, "height": 264 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "product-section",
+              "id": "rc1c2c3",
+              "bounds": { "x": 0, "y": 970, "width": 1142, "height": 2943 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "cta-banner",
+              "id": "rc1c2c4",
+              "bounds": { "x": 0, "y": 3977, "width": 1142, "height": 628 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "default-content",
+              "id": "rc1c2c5",
+              "bounds": { "x": 0, "y": 4668, "width": 1142, "height": 278 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/footer",
+      "children": [
+        {
+          "type": "block",
+          "name": "global-footer",
+          "id": "rc1c3",
+          "bounds": { "x": 0, "y": 4952, "width": 1142, "height": 378 }
+        }
+      ]
+    }
+  ]
+}

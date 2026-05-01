@@ -1,0 +1,101 @@
+{
+  "canonical": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement.html",
+  "description": "Zimmer Biomet offers surgeons a complete portfolio of modern cementing techniques in arthroplasty. Intended for healthcare professionals",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org/",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "1 (800) 613-6131"
+          },
+          "logo": "https://www.zimmerbiomet.com/etc.clientlibs/zb-corporate/clientlibs/clientlib-base/resources/img/favicon.ico",
+          "name": "Zimmer Biomet",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "query-input": "required name=search_term_string",
+            "target": "https://www.zimmerbiomet.com/search.html?q={search_term_string}"
+          },
+          "sameAs": [
+            "https://www.facebook.com/zimmerbiomet",
+            "https://twitter.com/zimmerbiomet",
+            "https://www.linkedin.com/company/zimmerbiomet",
+            "https://www.youtube.com/c/ZimmerBiomet"
+          ],
+          "url": "https://www.zimmerbiomet.com/en"
+        },
+        {
+          "@type": "WebSite",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "query-input": "required name=search_term_string",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.zimmerbiomet.com/search.html?q={search_term_string}"
+              }
+            }
+          ],
+          "url": "https://www.zimmerbiomet.com/en"
+        },
+        {
+          "@type": "CollectionPage",
+          "description": "Zimmer Biomet offers surgeons a complete portfolio of modern cementing techniques in arthroplasty. Intended for healthcare professionals",
+          "keywords": [],
+          "mainEntity": [
+            {
+              "@type": "MedicalDevice",
+              "description": "Biomet Bone Cement R offers high viscosity and radiopacity. Intended for knee and hip arthroplasty. Ideal for surgeons",
+              "name": "Biomet Bone Cement R",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/biomet-bone-cement-r.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "ClearMix offers effective vacuum mixing and delivery of PMMA bone cement to produce high quality cement and significantly reduce MMA fumes. Intended for surgeons",
+              "name": "<b>ClearMix® Vacuum Mixing System</b>",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/clearmix-vacuum-mixing-system.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "Bone cement/orthopedic cement mixers from Zimmer Biomet.",
+              "name": "Compact Vacuum Cement Mixing Systems",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/compact-vacuum-cement-mixing-systems.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "Conflow Bone Cements offer reduced viscosity for easy flow, ideal for syringe filling in various anatomical applications. Intended for surgeons",
+              "name": "Conflow Bone Cements",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/conflow-bone-cements.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "Discover Zimmer Biomet’s Modern Cementing Technique \r\noffering optimal cement quality for implant-cement and cement-bone interfaces. Intended for surgeons",
+              "name": "Modern Cementing Technique",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/modern-cementing-technique.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "Refobacin Bone Cement R offers high viscosity antibiotic bone cement for 2nd-stage joint arthroplasty after infection eradication. For healthcare professionals",
+              "name": "Refobacin® Bone Cement R",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/refobacin-bone-cement-r.html"
+            },
+            {
+              "@type": "MedicalDevice",
+              "description": "StageOne spacer molds are fully customizable. Simplify two-stage revision with Zimmer Biomet's robust revision portfolio. Intended for surgeons.",
+              "name": "StageOne™ Cement Spacer Molds",
+              "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement/stageone-cement-spacer-molds.html"
+            }
+          ],
+          "name": "Bone Cement for Arthroplasty Procedures",
+          "url": "https://www.zimmerbiomet.com/en/products-and-solutions/specialties/cement.html"
+        }
+      ]
+    }
+  ],
+  "ogTags": {},
+  "title": "Bone Cement Solutions for Arthroplasty | Zimmer Biomet",
+  "twitterTags": {}
+}

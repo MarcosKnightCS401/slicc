@@ -1,0 +1,55 @@
+@import url('brand.css');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --heading-font-family: "Inter", sans-serif;
+  --body-font-family: "Inter", sans-serif;
+  --background-color: #ffffff;
+  --text-color: rgb(0, 0, 0);
+  --link-color: rgb(28, 17, 55);
+  --link-hover-color: rgb(28, 17, 55);
+  --section-padding: 0px;
+  --nav-height: 125px;
+}
+
+main .button-container { display: inline; }
+main a.button:any-link {
+  background: none; border: none; border-radius: 0;
+  color: var(--link-color); font-size: inherit; font-weight: inherit;
+  padding: 0; margin: 0; text-decoration: underline; white-space: normal;
+}
+
+body {
+  font-family: var(--body-font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font-family);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+main {
+  display: block;
+}
+
+header {
+  height: var(--nav-height);
+}
+
+.section {
+  padding: var(--section-padding);
+}

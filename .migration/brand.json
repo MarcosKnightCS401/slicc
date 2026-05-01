@@ -1,0 +1,76 @@
+{
+  "colors": {
+    "background": "#ffffff",
+    "dark": "",
+    "light": "",
+    "link": "rgb(28, 17, 55)",
+    "linkHover": null,
+    "text": "rgb(0, 0, 0)"
+  },
+  "favicons": [
+    {
+      "rel": "icon",
+      "sizes": "16x16",
+      "url": "https://www.zimmerbiomet.com/etc.clientlibs/zb-common/clientlibs/clientlib-base/resources/img/favicon-16x16.png"
+    },
+    {
+      "rel": "icon",
+      "sizes": "32x32",
+      "url": "https://www.zimmerbiomet.com/etc.clientlibs/zb-common/clientlibs/clientlib-base/resources/img/favicon-32x32.png"
+    },
+    {
+      "rel": "icon",
+      "sizes": "48x48",
+      "url": "https://www.zimmerbiomet.com/etc.clientlibs/zb-common/clientlibs/clientlib-base/resources/img/favicon-48x48.png"
+    },
+    {
+      "rel": "shortcut icon",
+      "url": "https://www.zimmerbiomet.com/etc.clientlibs/zb-common/clientlibs/clientlib-base/resources/img/favicon.ico"
+    }
+  ],
+  "fonts": {
+    "body": {
+      "family": "Inter",
+      "familySet": "Inter, sans-serif"
+    },
+    "heading": {
+      "family": "Inter",
+      "familySet": "Inter, sans-serif"
+    },
+    "headingSizes": {
+      "l": {
+        "desktop": "16px",
+        "mobile": "24px"
+      },
+      "m": {
+        "desktop": "14px",
+        "mobile": "20px"
+      },
+      "s": {
+        "desktop": "21px",
+        "mobile": "18px"
+      },
+      "xl": {
+        "desktop": "21px",
+        "mobile": "28px"
+      },
+      "xs": {
+        "desktop": "16px",
+        "mobile": "16px"
+      },
+      "xxl": {
+        "desktop": "58px",
+        "mobile": "36px"
+      }
+    },
+    "sources": {
+      "googleFonts": [],
+      "typekit": null
+    }
+  },
+  "spacing": {
+    "contentMaxWidth": "",
+    "navHeight": "75px",
+    "sectionPadding": "0px"
+  }
+}

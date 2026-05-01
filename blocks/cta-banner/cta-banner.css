@@ -1,0 +1,120 @@
+.cta-banner-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.cta-banner {
+  --block-bg: linear-gradient(-5deg, rgba(65, 61, 201, 0.15) 0%, rgb(255, 255, 255) 50%);
+  --block-accent-1: radial-gradient(50% 100% at 0px 0px, rgba(255, 214, 66, 0.1) 0px, rgba(255, 214, 66, 0) 100%);
+  --block-accent-2: radial-gradient(50% 100% at 100% 0px, rgba(56, 113, 226, 0.1) 0px, rgba(4, 90, 121, 0) 100%);
+  --block-heading-color: rgb(43, 43, 128);
+  --block-text-color: rgb(0, 0, 0);
+  --block-btn-bg: rgb(65, 61, 201);
+  --block-btn-color: rgb(255, 255, 255);
+  --block-padding: 96px;
+
+  position: relative;
+  padding: var(--block-padding);
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    var(--block-accent-1),
+    var(--block-accent-2),
+    var(--block-bg);
+  z-index: 0;
+}
+
+.cta-banner > div {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.cta-banner > div > div {
+  padding: 32px;
+}
+
+.cta-banner h3 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--block-heading-color);
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family, "Inter", sans-serif);
+}
+
+.cta-banner p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--block-text-color);
+  margin: 0 0 16px;
+}
+
+main .cta-banner a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--block-btn-bg);
+  color: var(--block-btn-color);
+  padding: 24px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 4px solid var(--block-btn-bg);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+main .cta-banner a.button:any-link::after {
+  content: "→";
+  font-size: 20px;
+}
+
+main .cta-banner a.button:any-link:hover {
+  background: rgb(50, 46, 170);
+  border-color: rgb(50, 46, 170);
+}
+
+.cta-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 475px;
+}
+
+@media (width >= 900px) {
+  .cta-banner > div {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .cta-banner > div > div:first-child {
+    flex: 1;
+  }
+
+  .cta-banner > div > div:last-child {
+    flex: 0 0 auto;
+    max-width: 50%;
+  }
+}
+
+@media (width < 900px) {
+  .cta-banner {
+    padding: 48px 24px;
+  }
+
+  .cta-banner > div > div {
+    padding: 16px 0;
+  }
+
+  .cta-banner img {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
