@@ -283,3 +283,20 @@
 
 /* Push main content below fixed header */
 main { margin-top: 125px; }
+
+/* Override: constrain nav to viewport width */
+.header.block nav {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sections should flex-shrink to make room for search */
+.header.block .nav-sections {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.header.block .nav-sections ul {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
